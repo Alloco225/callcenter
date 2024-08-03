@@ -1,15 +1,18 @@
 <script setup>
-import { badgeVariants } from ".";
 import { cn } from "@/lib/utils";
 
 const props = defineProps({
-  variant: { type: null, required: false },
   class: { type: null, required: false },
 });
 </script>
 
 <template>
-  <div :class="cn(badgeVariants({ variant }), props.class)">
+  <span
+    role="link"
+    aria-disabled="true"
+    aria-current="page"
+    :class="cn('font-normal text-foreground', props.class)"
+  >
     <slot />
-  </div>
+  </span>
 </template>

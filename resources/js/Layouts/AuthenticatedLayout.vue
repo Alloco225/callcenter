@@ -38,9 +38,9 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div
-        class="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]"
+        class="grid max-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]"
     >
-        <div class="hidden border-r bg-muted/40 md:block">
+        <div class="hidden border-r bg-muted/40 md:block max-h-screen overflow-hidden">
             <div class="flex h-full max-h-screen flex-col gap-2">
                 <div
                     class="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6"
@@ -105,7 +105,7 @@ const showingNavigationDropdown = ref(false);
                     </nav>
                 </div>
                 <div class="mt-auto p-4">
-                    <Card>
+                    <!-- <Card>
                         <CardHeader class="p-2 pt-0 md:p-4">
                             <CardTitle>Upgrade to Pro</CardTitle>
                             <CardDescription>
@@ -116,13 +116,13 @@ const showingNavigationDropdown = ref(false);
                         <CardContent class="p-2 pt-0 md:p-4 md:pt-0">
                             <Button size="sm" class="w-full"> Upgrade </Button>
                         </CardContent>
-                    </Card>
+                    </Card> -->
                 </div>
             </div>
         </div>
-        <div class="flex flex-col">
+        <div class="max-h-screen flex flex-col overflow-scroll">
             <header
-                class="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6"
+                class="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:py-5 lg:h-[60px] lg:px-6"
             >
                 <Sheet>
                     <SheetTrigger as-child>
@@ -238,8 +238,9 @@ const showingNavigationDropdown = ref(false);
                     </DropdownMenuContent>
                 </DropdownMenu>
             </header>
-            
-            <slot />
+            <main class="">
+                <slot />
+            </main>
         </div>
     </div>
 </template>

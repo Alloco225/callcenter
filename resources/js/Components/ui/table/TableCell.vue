@@ -1,15 +1,20 @@
 <script setup>
-import { badgeVariants } from ".";
 import { cn } from "@/lib/utils";
 
 const props = defineProps({
-  variant: { type: null, required: false },
   class: { type: null, required: false },
 });
 </script>
 
 <template>
-  <div :class="cn(badgeVariants({ variant }), props.class)">
+  <td
+    :class="
+      cn(
+        'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
+        props.class,
+      )
+    "
+  >
     <slot />
-  </div>
+  </td>
 </template>

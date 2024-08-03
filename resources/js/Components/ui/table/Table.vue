@@ -1,15 +1,15 @@
 <script setup>
-import { badgeVariants } from ".";
 import { cn } from "@/lib/utils";
 
 const props = defineProps({
-  variant: { type: null, required: false },
   class: { type: null, required: false },
 });
 </script>
 
 <template>
-  <div :class="cn(badgeVariants({ variant }), props.class)">
-    <slot />
+  <div class="relative w-full overflow-auto">
+    <table :class="cn('w-full caption-bottom text-sm', props.class)">
+      <slot />
+    </table>
   </div>
 </template>
