@@ -67,14 +67,14 @@ const showingNavigationDropdown = ref(false);
                             class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                         >
                             <Home class="h-4 w-4" />
-                            Dashboard
+                            Accueil
                         </a>
                         <a
                             href="#"
                             class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                         >
                             <ShoppingCart class="h-4 w-4" />
-                            Orders
+                            Appels
                             <Badge
                                 class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
                             >
@@ -86,14 +86,14 @@ const showingNavigationDropdown = ref(false);
                             class="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
                         >
                             <Package class="h-4 w-4" />
-                            Products
+                            Appels
                         </a>
                         <a
                             href="#"
                             class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                         >
                             <Users class="h-4 w-4" />
-                            Customers
+                            Clients
                         </a>
                         <a
                             href="#"

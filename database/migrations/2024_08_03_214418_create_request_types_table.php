@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('request_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->foreignId('request_kind_id')->constrained('request_kinds');
             $table->timestamps();
         });
     }
