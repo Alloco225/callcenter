@@ -17,6 +17,9 @@ class UserSeeder extends Seeder
         //
 
         $adminRole = Role::where('name', 'Admin')->first();
+        $agentRole = Role::where('name', 'Agent')->first();
+        $supervisorRole = Role::where('name', 'Supervisor')->first();
+        $clientRole = Role::where('name', 'Client')->first();
         $userRole = Role::where('name', 'User')->first();
 
         User::create([
@@ -24,6 +27,19 @@ class UserSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => Hash::make('securepassword'), // Make sure to hash this password in a real app
             'role_id' => $adminRole->id,
+        ]);
+
+        User::create([
+            'name' => 'Agent User',
+            'email' => 'agent@example.com',
+            'password' => Hash::make('securepassword'), // Make sure to hash this password in a real app
+            'role_id' => $agentRole->id,
+        ]);
+        User::create([
+            'name' => 'Supervisor User',
+            'email' => 'supervisor@example.com',
+            'password' => Hash::make('securepassword'), // Make sure to hash this password in a real app
+            'role_id' => $supervisorRole->id,
         ]);
 
         User::create([

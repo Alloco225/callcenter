@@ -3,63 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\Request;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as HttpRequest;
+
+use Illuminate\Support\Facades\Auth;
+
 
 class RequestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+     public function index()
     {
-        //
+        $requests = Request::with('user')->get();
+        return response()->json($requests);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(HttpRequest $request)
     {
-        //
+        $newRequest = Request::create([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'description' => $request->description,
+            'status' => 'PENDING',
+        ]);
+
+        return response()->json($newRequest, 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(HttpRequest $request, $id)
     {
-        //
+        $existingRequest = Request::findOrFail($id);
+        $existingRequest->update($request->only(['status']));
+        return response()->json($existingRequest);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Request $request)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Request $request)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Request $request)
-    {
-        //
+        $existingRequest = Request::findOrFail($id);
+        $existingRequest->delete();
+        return response()->json(null, 204);
     }
 }
