@@ -71,10 +71,10 @@ import {
 } from "@/Components/ui/tooltip";
 import { Checkbox } from "@/Components/ui/checkbox";
 
-import AgentDashboard from "@/Pages/Dashboard/AgentDashboard.vue";
-import AdminDashboard from "@/Pages/Dashboard/AdminDashboard.vue";
-import ClientDashboard from "@/Pages/Dashboard/ClientDashboard.vue";
-import SupervisorDashboard from "@/Pages/Dashboard/SupervisorDashboard.vue";
+import AgentDashboard from "@/Pages/AgentDashboard.vue";
+import AdminDashboard from "@/Pages/AdminDashboard.vue";
+import ClientDashboard from "@/Pages/ClientDashboard.vue";
+import SupervisorDashboard from "@/Pages/SupervisorDashboard.vue";
 import { Head } from "@inertiajs/vue3";
 </script>
 
