@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as r,f as e}from"./app-C2rT7eKA.js";const s={name:""};function t(a,n,c,p,_,f){return r(),e("div",null," supervisor ")}const u=o(s,[["render",t]]);export{u as default};
